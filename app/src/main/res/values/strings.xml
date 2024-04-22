@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">UFit</string>
+    <string name="introMsg">Make your body healthier\nand stronger</string>
+    <string name="introDetailsMsg">Sport is a form of physical activity that is usually competitive with the aim of increasing physical abilities and skills</string>
+    <string name="getStarted">Get Started</string>
+    <string name="welcomeBack">Welcome Back</string>
+    <string name="user">Thanos</string>
+    <string name="getReadyMsg">Get Ready and select one of the following workouts!</string>
+    <string name="fullBody">Full Body</string>
+    <string name="upperBody">Upper</string>
+    <string name="lowerBody">Lower</string>
+    <string name="hands">Hands</string>
+    <string name="recommended">Recommended Workouts</string>
+</resources>
