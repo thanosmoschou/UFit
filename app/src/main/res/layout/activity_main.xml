@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="@color/black">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="25dp"
+        android:text="@string/app_name"
+        android:textColor="@color/white"
+        android:fontFamily="@font/jersey20_regular"
+        android:textSize="60dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="300dp"
+        android:src="@drawable/introman"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="120dp"
+        android:id="@+id/intromanimage"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/introMsg"
+        android:textSize="30sp"
+        android:fontFamily="@font/overpass_light"
+        android:textColor="@color/white"
+        app:layout_constraintTop_toBottomOf="@+id/intromanimage"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="90dp"
+        android:layout_marginLeft="20dp"
+        android:id="@+id/introMsg"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/introDetailsMsg"
+        android:fontFamily="@font/overpass_light"
+        android:text="@string/introDetailsMsg"
+        app:layout_constraintTop_toBottomOf="@id/introMsg"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:textSize="20sp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="10dp"
+        android:textColor="@color/grey_more_transparent"/>
+
+    <Button
+        android:layout_width="180dp"
+        android:layout_height="50dp"
+        android:text="@string/getStarted"
+        app:layout_constraintTop_toBottomOf="@+id/introDetailsMsg"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="60dp"
+        android:fontFamily="@font/overpass_light"
+        android:backgroundTint="@color/orange"
+        android:textSize="20sp"
+        android:id="@+id/getStartedBtn"/>
+</androidx.constraintlayout.widget.ConstraintLayout>
