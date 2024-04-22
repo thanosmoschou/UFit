@@ -6,5 +6,5 @@ Then UFit is for you! <br>
 
  ### Screenshots
 
- <img src="screenshots/ufitGetStartedScreen.png" width=450 height=600> <br><br>
-<img src="screenshots/ufitMainScreen.png" width=450 height=600> <br><br>
+ <img src="screenshots/ufitGetStartedScreen.png" width=400 height=800> <br><br>
+<img src="screenshots/ufitMainScreen.png" width=400 height=800> <br><br>
