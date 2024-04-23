@@ -68,5 +68,6 @@
         android:fontFamily="@font/overpass_light"
         android:backgroundTint="@color/orange"
         android:textSize="20sp"
-        android:id="@+id/getStartedBtn"/>
+        android:id="@+id/getStartedBtn"
+        android:textColor="@color/white"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
