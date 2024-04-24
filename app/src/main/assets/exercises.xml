@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<exercises>
+    <exercise>
+        <name>Squats</name>
+        <sets>3</sets>
+        <description>Squats is a great exercise to train your quads!</description>
+        <image_url>something</image_url>
+    </exercise>
+    <exercise>
+        <name>Calf-Raises</name>
+        <sets>3</sets>
+        <description>Calf-Raises is a great exercise to train your calves!</description>
+        <image_url>something</image_url>
+    </exercise>
+    <exercise>
+        <name>Bicep-Curls</name>
+        <sets>3</sets>
+        <description>This is a great exercise to obtain bicep guns!</description>
+        <image_url>something</image_url>
+    </exercise>
+    <exercise>
+        <name>Bench-Press</name>
+        <sets>3</sets>
+        <description>An amazing exercise to create bulletproof chest!</description>
+        <image_url>something</image_url>
+    </exercise>
+    <exercise>
+        <name>Tricep-Extensions</name>
+        <sets>3</sets>
+        <description>An exercise for solid triceps!</description>
+        <image_url>something</image_url>
+    </exercise>
+</exercises>
