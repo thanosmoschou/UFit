@@ -1,56 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:clickable="true">
+    android:layout_width="350dp"
+    android:layout_height="60dp"
+    android:backgroundTint="@color/grey_transparent"
+    app:cardElevation="10dp"
+    app:cardCornerRadius="10dp"
+    android:layout_marginTop="10dp"
+    android:id="@+id/parent">
 
-    <androidx.cardview.widget.CardView
-        android:layout_centerHorizontal="true"
-        android:layout_width="350dp"
-        android:layout_height="60dp"
-        android:layout_marginTop="20dp"
-        android:backgroundTint="@color/grey_transparent"
-        app:cardElevation="10dp"
-        app:cardCornerRadius="10dp">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/mindset_is_everything"
+            android:layout_weight="1"
+            android:layout_gravity="left"
+            android:id="@+id/exerciseIcon" />
 
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_weight="4">
 
-            <ImageView
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:src="@drawable/mindset_is_everything"
-                android:layout_weight="1"
-                android:layout_gravity="left"
-                android:id="@+id/exerciseIcon"/>
-
-            <LinearLayout
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_weight="4">
+                android:text="Push Ups"
+                android:fontFamily="@font/overpass_light"
+                android:textColor="@color/white_transparent"
+                android:textSize="15sp"
+                android:layout_marginTop="10dp"
+                android:id="@+id/exerciseNameTxt"/>
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Push Ups"
-                    android:fontFamily="@font/overpass_light"
-                    android:textColor="@color/white_transparent"
-                    android:textSize="15sp"
-                    android:layout_marginTop="10dp"
-                    android:id="@+id/exerciseNameTxt"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="3-4 sets/10-12 reps"
-                    android:fontFamily="@font/overpass_light"
-                    android:textColor="@color/white_transparent"
-                    android:textSize="10sp"
-                    android:id="@+id/setsTxt"/>
-            </LinearLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="3-4 sets/10-12 reps"
+                android:fontFamily="@font/overpass_light"
+                android:textColor="@color/white_transparent"
+                android:textSize="10sp"
+                android:id="@+id/setsTxt"/>
         </LinearLayout>
-    </androidx.cardview.widget.CardView>
-</RelativeLayout>
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

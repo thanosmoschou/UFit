@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".CentralScreenActivity"
-    android:background="@color/black">
+    android:background="@color/black"
+    >
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -125,7 +126,7 @@
     </androidx.cardview.widget.CardView>
 
     <LinearLayout
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:id="@+id/possibleWorkouts"
@@ -140,7 +141,6 @@
             android:backgroundTint="@color/grey_transparent"
             app:cardElevation="5dp"
             app:cardCornerRadius="15dp"
-            android:layout_marginStart="30dp"
             android:clickable="true">
 
             <TextView
@@ -229,13 +229,27 @@
         android:textColor="@color/white"
         android:id="@+id/recommended"/>
 
-    <ListView
-        android:layout_width="match_parent"
-        android:layout_height="300dp"
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="350dp"
+        android:layout_height="250dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:id="@+id/exercisesList"
-        app:layout_constraintTop_toBottomOf="@id/recommended">
-    </ListView>
+        app:layout_constraintTop_toTopOf="@id/recommended"
+        android:id="@+id/exercisesView"
+        android:layout_marginTop="50dp"/>
+
+    <Button
+        android:layout_width="180dp"
+        android:layout_height="50dp"
+        android:text="@string/start"
+        app:layout_constraintTop_toBottomOf="@+id/exercisesView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="50dp"
+        android:fontFamily="@font/overpass_light"
+        android:backgroundTint="@color/orange"
+        android:textSize="20sp"
+        android:id="@+id/getStartedBtn"
+        android:textColor="@color/white"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

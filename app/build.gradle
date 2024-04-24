@@ -6,6 +6,10 @@ android {
     namespace 'com.example.ufit'
     compileSdk 33
 
+    viewBinding {
+        enabled = true
+    }
+
     defaultConfig {
         applicationId "com.example.ufit"
         minSdk 24
