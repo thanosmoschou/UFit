@@ -82,4 +82,5 @@ public class ExerciseList
     {
         return availableExercises;
     }
+
 }

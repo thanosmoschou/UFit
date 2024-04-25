@@ -56,7 +56,7 @@ public class ExerciseListAdapter extends RecyclerView.Adapter<ExerciseListAdapte
 
         //Let's create a listener for each element. I will implement a listener for the relative layout and not only for the text view
         //that is inside my layout file
-        holder.parent.setOnClickListener(new View.OnClickListener() {
+        holder.singleExerciseCard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view)
             {
@@ -105,7 +105,7 @@ public class ExerciseListAdapter extends RecyclerView.Adapter<ExerciseListAdapte
         private TextView exerciseNameTxt; //If I have more elements inside my layout file I can add them in the same way I did here.
         private ImageView exerciseIcon;
         private TextView setsTxt;
-        private CardView parent;
+        private CardView singleExerciseCard;
 
 
         public ViewHolder(@NonNull View itemView)
@@ -114,7 +114,7 @@ public class ExerciseListAdapter extends RecyclerView.Adapter<ExerciseListAdapte
             exerciseNameTxt = itemView.findViewById(R.id.exerciseNameTxt);
             exerciseIcon = itemView.findViewById(R.id.exerciseIcon);
             setsTxt = itemView.findViewById(R.id.setsTxt);
-            parent = itemView.findViewById(R.id.parent);
+            singleExerciseCard = itemView.findViewById(R.id.singleExerciseCard);
         }
     }
 }

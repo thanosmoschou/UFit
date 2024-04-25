@@ -1,6 +1,6 @@
 package com.example.ufit;
 
-public class Exercise
+public class Exercise implements Comparable<Exercise>
 {
     private String name;
     private int sets;
@@ -58,5 +58,11 @@ public class Exercise
     public void setIconUrl(String iconUrl)
     {
         this.iconUrl = iconUrl;
+    }
+
+    @Override
+    public int compareTo(Exercise exercise)
+    {
+        return this.name.compareTo(exercise.name);
     }
 }
