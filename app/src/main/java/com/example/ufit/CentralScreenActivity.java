@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -26,6 +27,7 @@ public class CentralScreenActivity extends AppCompatActivity
     private CardView fullBodyCard, upperBodyCard, lowerBodyCard, handsCard;
     private ExerciseList exerciseList;
     private ExerciseListAdapter exerciseListAdapter;
+    private ImageView notificationBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -46,6 +48,17 @@ public class CentralScreenActivity extends AppCompatActivity
         exercisesRecyclerView = findViewById(R.id.exercisesRecyclerView);
         exercisesRecyclerView.setAdapter(exerciseListAdapter);
         exercisesRecyclerView.setLayoutManager(new LinearLayoutManager(CentralScreenActivity.this));
+
+        notificationBtn = findViewById(R.id.notificationBtn);
+        notificationBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ImageView notificationBtnBackground = findViewById(R.id.notificationBtnBackground);
+                notificationBtnBackground.setBackground(getResources().getDrawable(R.drawable.circle_background_white_transparent));
+
+                notificationBtn.setImageResource(R.drawable.baseline_notifications_none_24_black);
+            }
+        });
 
         fullBodyCard.setOnClickListener(new View.OnClickListener() {
             @Override
