@@ -6,10 +6,14 @@
     <string name="welcomeBack">Welcome Back</string>
     <string name="user">Thanos</string>
     <string name="getReadyMsg">Get Ready and select one of the following workouts!</string>
-    <string name="fullBody">Full Body</string>
-    <string name="upperBody">Upper</string>
-    <string name="lowerBody">Lower</string>
-    <string name="hands">Hands</string>
     <string name="recommended">Recommended Workouts</string>
     <string name="start">Start</string>
+
+    <string-array name="exerciseTypes">
+        <item>Cardio</item>
+        <item>Powerlifting</item>
+        <item>Strength</item>
+        <item>Stretching</item>
+        <item>Plyometrics</item>
+    </string-array>
 </resources>

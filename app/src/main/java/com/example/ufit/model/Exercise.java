@@ -1,4 +1,4 @@
-package com.example.ufit;
+package com.example.ufit.model;
 
 public class Exercise implements Comparable<Exercise>
 {

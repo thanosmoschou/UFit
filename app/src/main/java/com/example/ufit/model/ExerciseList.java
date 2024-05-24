@@ -3,9 +3,11 @@ Author: Thanos Moschou
 Description: This is a simple fitness app.
  */
 
-package com.example.ufit;
+package com.example.ufit.model;
 
 import android.content.res.AssetManager;
+
+import com.example.ufit.model.Exercise;
 
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
