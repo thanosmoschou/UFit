@@ -14,15 +14,23 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.ufit.model.Exercise;
 import com.example.ufit.R;
+import com.example.ufit.model.ExerciseList;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 
 public class ExerciseTypesAdapter extends RecyclerView.Adapter<ExerciseTypesAdapter.ViewHolder>
 {
 
     private List<String> exerciseTypesList;
+    //I pass the exercise list and its adapter in order to modify the list and update the listview everytime
+    //user selects a different exercise type
+    private ExerciseListAdapter exerciseListAdapter;
+    private List<Exercise> exerciseList;
+
     private Context context;
     private int selectedPosition = -1;
 
@@ -63,6 +71,13 @@ public class ExerciseTypesAdapter extends RecyclerView.Adapter<ExerciseTypesAdap
             public void onClick(View view)
             {
                 selectedPosition = position;
+
+                Collections.shuffle(exerciseList);
+
+                //update the recommended workout exercise list
+                exerciseListAdapter.setExercises(exerciseList);
+                exerciseListAdapter.notifyDataSetChanged();
+
                 notifyDataSetChanged();
             }
         });
@@ -79,6 +94,16 @@ public class ExerciseTypesAdapter extends RecyclerView.Adapter<ExerciseTypesAdap
     {
         this.exerciseTypesList = exerciseTypesList;
         notifyDataSetChanged(); //notify the adapter that the data have changed
+    }
+
+    public void setExerciseList(List<Exercise> exerciseList)
+    {
+        this.exerciseList = exerciseList;
+    }
+
+    public void setExerciseListAdapter(ExerciseListAdapter exerciseListAdapter)
+    {
+        this.exerciseListAdapter = exerciseListAdapter;
     }
 
     //This inner class is going to hold the view items for every item in our recycler view.

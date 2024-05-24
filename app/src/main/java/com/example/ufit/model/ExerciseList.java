@@ -31,6 +31,8 @@ public class ExerciseList
     {
         availableExercises = new ArrayList<>();
 
+        //TODO: MAKE API CALL IN ORDER TO FILL THE LIST INSTEAD OF PARSING XML
+        //KEEP IN MIND THAT YOU HAVE TO UPDATE THE EXERCISE OBJECT TOO.
         try
         {
             //parse the xml

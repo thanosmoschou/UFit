@@ -17,11 +17,12 @@ import com.example.ufit.R;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class ExerciseListAdapter extends RecyclerView.Adapter<ExerciseListAdapter.ViewHolder>
 {
 
-    private ArrayList<Exercise> exercises;
+    private List<Exercise> exercises;
     private Context context;
 
     public ExerciseListAdapter(Context aContext)
@@ -89,7 +90,7 @@ public class ExerciseListAdapter extends RecyclerView.Adapter<ExerciseListAdapte
         return exercises.size();
     }
 
-    public void setExercises(ArrayList<Exercise> exercises)
+    public void setExercises(List<Exercise> exercises)
     {
         this.exercises = exercises;
         notifyDataSetChanged(); //notify the adapter that the data have changed
