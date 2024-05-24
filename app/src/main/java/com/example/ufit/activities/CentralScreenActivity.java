@@ -29,10 +29,11 @@ import java.util.List;
 
 public class CentralScreenActivity extends AppCompatActivity
 {
-    private RecyclerView exercisesRecyclerView;
+    private RecyclerView exercisesListRecyclerView;
     private RecyclerView exerciseTypesRecyclerView;
-    private ExerciseList exerciseList;
+    //private ExerciseList exerciseList;
     private ExerciseListAdapter exerciseListAdapter;
+    private ExerciseTypesAdapter exerciseTypesAdapter;
     private ImageView notificationBtn;
 
     @Override
@@ -41,22 +42,25 @@ public class CentralScreenActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_central_screen);
 
+        List<Exercise> exerciseList = new ExerciseList(getAssets()).getAvailableExercises();
         List<String> exercTypes = List.of(getResources().getStringArray(R.array.exerciseTypes));
-        ExerciseTypesAdapter exerciseTypesAdapter = new ExerciseTypesAdapter(getApplicationContext());
+
+        exerciseListAdapter = new ExerciseListAdapter(CentralScreenActivity.this);
+        exerciseListAdapter.setExercises(exerciseList);
+
+        exercisesListRecyclerView = findViewById(R.id.exercisesListRecyclerView);
+        exercisesListRecyclerView.setAdapter(exerciseListAdapter);
+        exercisesListRecyclerView.setLayoutManager(new LinearLayoutManager(CentralScreenActivity.this));
+
+        exerciseTypesAdapter = new ExerciseTypesAdapter(getApplicationContext());
         exerciseTypesAdapter.setExerciseTypesList(exercTypes);
+        exerciseTypesAdapter.setExerciseList(exerciseList);
+        exerciseTypesAdapter.setExerciseListAdapter(exerciseListAdapter);
 
         exerciseTypesRecyclerView = findViewById(R.id.exerciseTypesRecyclerView);
         exerciseTypesRecyclerView.setAdapter(exerciseTypesAdapter);
         exerciseTypesRecyclerView.setLayoutManager(new LinearLayoutManager(CentralScreenActivity.this, RecyclerView.HORIZONTAL, false));
 
-        exerciseList = new ExerciseList(getAssets());
-
-        exerciseListAdapter = new ExerciseListAdapter(CentralScreenActivity.this);
-        exerciseListAdapter.setExercises(exerciseList.getAvailableExercises());
-
-        exercisesRecyclerView = findViewById(R.id.exercisesRecyclerView);
-        exercisesRecyclerView.setAdapter(exerciseListAdapter);
-        exercisesRecyclerView.setLayoutManager(new LinearLayoutManager(CentralScreenActivity.this));
 
         notificationBtn = findViewById(R.id.notificationBtn);
         notificationBtn.setOnClickListener(new View.OnClickListener() {
@@ -72,7 +76,7 @@ public class CentralScreenActivity extends AppCompatActivity
 
     }
 
-    private void modifyExerciseList(String muscleGroup)
+    /*private void modifyExerciseList(String muscleGroup)
     {
         //shuffle the exercises list for testing purposes...
         ArrayList<Exercise> availableExercises = exerciseList.getAvailableExercises();
@@ -84,5 +88,5 @@ public class CentralScreenActivity extends AppCompatActivity
     {
         cardView.setCardBackgroundColor(backgroundColor);
         textView.setTextColor(textColor);
-    }
+    }*/
 }

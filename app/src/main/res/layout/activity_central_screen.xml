@@ -164,14 +164,14 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@id/recommended"
-        android:id="@+id/exercisesRecyclerView"
+        android:id="@+id/exercisesListRecyclerView"
         android:layout_marginTop="50dp"/>
 
     <Button
         android:layout_width="180dp"
         android:layout_height="50dp"
         android:text="@string/start"
-        app:layout_constraintTop_toBottomOf="@+id/exercisesRecyclerView"
+        app:layout_constraintTop_toBottomOf="@+id/exercisesListRecyclerView"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="50dp"
