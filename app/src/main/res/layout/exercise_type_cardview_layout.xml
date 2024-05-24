@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="80dp"
+    android:layout_height="80dp"
+    app:cardBackgroundColor="@color/grey_transparent"
+    app:cardElevation="5dp"
+    app:cardCornerRadius="15dp"
+    android:clickable="true"
+    android:layout_marginTop="10dp"
+    android:layout_marginLeft="10dp"
+    android:id="@+id/exerciseTypeCard">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cardio"
+        android:fontFamily="@font/overpass_light"
+        android:textColor="@color/white_transparent"
+        android:textSize="15sp"
+        android:layout_gravity="center"
+        android:id="@+id/exerciseTypeName"/>
+</androidx.cardview.widget.CardView>
