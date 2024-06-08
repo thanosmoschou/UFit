@@ -6,24 +6,19 @@ Description: This is a simple fitness app.
 package com.example.ufit.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
-import android.widget.ListView;
-import android.widget.TextView;
 
 import com.example.ufit.R;
 import com.example.ufit.adapters.ExerciseListAdapter;
 import com.example.ufit.adapters.ExerciseTypesAdapter;
 import com.example.ufit.model.Exercise;
-import com.example.ufit.model.ExerciseList;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 
@@ -42,7 +37,7 @@ public class CentralScreenActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_central_screen);
 
-        List<Exercise> exerciseList = new ExerciseList(getAssets()).getAvailableExercises();
+        List<Exercise> exerciseList = new ArrayList<>();
         List<String> exercTypes = List.of(getResources().getStringArray(R.array.exerciseTypes));
 
         exerciseListAdapter = new ExerciseListAdapter(CentralScreenActivity.this);
@@ -72,21 +67,6 @@ public class CentralScreenActivity extends AppCompatActivity
                 notificationBtn.setImageResource(R.drawable.baseline_notifications_none_24_black);
             }
         });
-
-
     }
 
-    /*private void modifyExerciseList(String muscleGroup)
-    {
-        //shuffle the exercises list for testing purposes...
-        ArrayList<Exercise> availableExercises = exerciseList.getAvailableExercises();
-        Collections.shuffle(availableExercises);
-        exerciseListAdapter.setExercises(availableExercises);
-    }
-
-    private void changeCardViewBackground(CardView cardView, TextView textView, int backgroundColor, int textColor)
-    {
-        cardView.setCardBackgroundColor(backgroundColor);
-        textView.setTextColor(textColor);
-    }*/
 }

@@ -50,8 +50,7 @@ public class ExerciseListAdapter extends RecyclerView.Adapter<ExerciseListAdapte
     {
         //here we use the properties of our view holder class
         holder.exerciseNameTxt.setText(exercises.get(position).getName());
-        holder.setsTxt.setText(Integer.toString(exercises.get(position).getSets()));
-        holder.exerciseIcon.setImageResource(R.drawable.mindset_is_everything);
+        holder.setsTxt.setText("Sets: " + Integer.toString(exercises.get(position).getSets()));
 
         //Let's create a listener for each element. I will implement a listener for the relative layout and not only for the text view
         //that is inside my layout file
@@ -60,10 +59,10 @@ public class ExerciseListAdapter extends RecyclerView.Adapter<ExerciseListAdapte
             public void onClick(View view)
             {
                 Exercise selected = null;
-                String exerciseName = holder.exerciseNameTxt.getText().toString();
+                String exName = holder.exerciseNameTxt.getText().toString();
 
                 for(Exercise ex : exercises)
-                    if(ex.hasName(exerciseName))
+                    if(ex.hasName(exName))
                     {
                         selected = ex;
                         break;
@@ -74,8 +73,19 @@ public class ExerciseListAdapter extends RecyclerView.Adapter<ExerciseListAdapte
                     BottomSheetDialog detailsDialog = new BottomSheetDialog(context);
                     detailsDialog.setContentView(R.layout.exercise_details_layout);
 
-                    TextView exerciseDescription = detailsDialog.findViewById(R.id.exerciseDescription);
-                    exerciseDescription.setText(selected.getDescription());
+                    TextView exerciseName = detailsDialog.findViewById(R.id.exerciseName);
+                    TextView exerciseType = detailsDialog.findViewById(R.id.exerciseType);
+                    TextView exerciseMuscle = detailsDialog.findViewById(R.id.exerciseMuscle);
+                    TextView exerciseEquipment = detailsDialog.findViewById(R.id.exerciseEquipment);
+                    TextView exerciseDifficulty = detailsDialog.findViewById(R.id.exerciseDifficulty);
+                    TextView exerciseInstructions = detailsDialog.findViewById(R.id.exerciseInstructions);
+
+                    exerciseName.setText(selected.getName());
+                    exerciseType.setText("Exercise Type: " + selected.getType());
+                    exerciseMuscle.setText("Muscle Group: " + selected.getMuscle());
+                    exerciseEquipment.setText("Equipment: " + selected.getEquipment());
+                    exerciseDifficulty.setText("Difficulty: " + selected.getDifficulty());
+                    exerciseInstructions.setText("Instructions: " + selected.getInstructions());
 
                     detailsDialog.show();
                 }
@@ -102,7 +112,6 @@ public class ExerciseListAdapter extends RecyclerView.Adapter<ExerciseListAdapte
     public class ViewHolder extends RecyclerView.ViewHolder
     {
         private TextView exerciseNameTxt; //If I have more elements inside my layout file I can add them in the same way I did here.
-        private ImageView exerciseIcon;
         private TextView setsTxt;
         private CardView singleExerciseCard;
 
@@ -111,7 +120,6 @@ public class ExerciseListAdapter extends RecyclerView.Adapter<ExerciseListAdapte
         {
             super(itemView);
             exerciseNameTxt = itemView.findViewById(R.id.exerciseNameTxt);
-            exerciseIcon = itemView.findViewById(R.id.exerciseIcon);
             setsTxt = itemView.findViewById(R.id.setsTxt);
             singleExerciseCard = itemView.findViewById(R.id.singleExerciseCard);
         }
