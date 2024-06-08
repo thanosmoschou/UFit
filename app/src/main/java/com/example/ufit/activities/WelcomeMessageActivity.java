@@ -17,16 +17,16 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.ufit.R;
-import com.example.ufit.activities.CentralScreenActivity;
+import com.example.ufit.http_request.HttpHandler;
 
-public class MainActivity extends AppCompatActivity
+public class WelcomeMessageActivity extends AppCompatActivity
 {
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_welcome_message);
 
         TextView introMsgTextView = findViewById(R.id.introMsg);
         String introText = getResources().getString(R.string.introMsg);
@@ -50,6 +50,7 @@ public class MainActivity extends AppCompatActivity
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), CentralScreenActivity.class);
                 startActivity(intent);
+
             }
         });
 

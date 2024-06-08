@@ -5,21 +5,16 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.ufit.http_request.RequestThread;
 import com.example.ufit.model.Exercise;
 import com.example.ufit.R;
-import com.example.ufit.model.ExerciseList;
-import com.google.android.material.bottomsheet.BottomSheetDialog;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
 import java.util.List;
 
 public class ExerciseTypesAdapter extends RecyclerView.Adapter<ExerciseTypesAdapter.ViewHolder>
@@ -70,9 +65,21 @@ public class ExerciseTypesAdapter extends RecyclerView.Adapter<ExerciseTypesAdap
             @Override
             public void onClick(View view)
             {
+                String exerciseType = holder.exerciseTypeName.getText().toString();
                 selectedPosition = position;
 
-                Collections.shuffle(exerciseList);
+                RequestThread requestThread = new RequestThread(exerciseType);
+                try
+                {
+                    requestThread.start();
+                    requestThread.join();
+                }
+                catch (InterruptedException e)
+                {
+                    throw new RuntimeException(e);
+                }
+
+                exerciseList = requestThread.getAvailableExercises();
 
                 //update the recommended workout exercise list
                 exerciseListAdapter.setExercises(exerciseList);
